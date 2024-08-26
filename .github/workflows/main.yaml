@@ -3,7 +3,8 @@ name: Release (Production)
 on:
   push:
     branches: [main]
-env: VITE_API_KEY=${{secrets.VITE_API_KEY}}
+env:
+  VITE_API_KEY: ${{secrets.VITE_API_KEY}}
 jobs:
   build:
     runs-on: ubuntu-latest
