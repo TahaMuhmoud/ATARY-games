@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  * {
+    @apply font-main text-white select-none;
+  }
+  body {
+    @apply w-screen bg-primary overflow-x-hidden;
+  }
+  *::-webkit-scrollbar {
+    @apply w-[2px] h-[2px];
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-third;
+  }
+}
