@@ -87,7 +87,7 @@ const SearchOverlay = ({ searchText }: { searchText?: string }) => {
           )}
         </div>
         {data?.results && data?.results?.length > 0 && (
-          <Pagination data={data!} changePage={setPage} />
+          <Pagination data={data} changePage={setPage} />
         )}
       </div>
     </div>

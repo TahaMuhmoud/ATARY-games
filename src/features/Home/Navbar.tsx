@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar w-full px-5 sm:px-10 xl:px-14 flex flex-col items-center">
-      <div className="w-full h-24 flex items-center justify-between">
+      <div className="w-full h-10 bg-green-500 flex items-center justify-between">
         <div
           className="box logo h-full cursor-pointer"
           onClick={() => navigate("/")}

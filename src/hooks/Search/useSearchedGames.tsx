@@ -5,6 +5,7 @@ import { GetGamesParams } from "../../types/types";
 function useSearchedGames(params: GetGamesParams) {
   const qClient = useQueryClient();
   const { search, page, page_size } = params;
+
   const { data, isLoading: isLoadingGames } = useQuery(
     ["searched-games", search, page, page_size],
     () => getGames(params),

@@ -16,8 +16,8 @@ const getGeners: (
 ) => {
   const { page, page_size } = params;
   const { data } = await api.get("genres", { params: { ...params } });
-
-  return { ...data, page, page_size };
+  const newResults = data?.results.filter((genre: Genre) => genre.id !== 14);
+  return { ...data, results: newResults, page, page_size };
 };
 // ======================
 

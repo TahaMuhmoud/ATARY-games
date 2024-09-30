@@ -29,7 +29,8 @@ export const getGames: (
   });
 
   const games = (data?.results as Game[]) || [];
-  const newResults = games.map((game) => {
+
+  let newResults = games.map((game) => {
     const gamePlatforms =
       game.platforms?.map((platform) => {
         const platformLogo = assignLogoToPlatform(platform.platform);
@@ -59,6 +60,12 @@ export const getGames: (
       metacritic_platforms: metas,
     };
   });
+
+  newResults = newResults.filter(
+    (game) =>
+      game.genres.findIndex((genre) => genre.id === 14) === -1 &&
+      !game.name.toUpperCase().includes("SEX")
+  );
 
   return { ...data, results: newResults, page, page_size };
 };
